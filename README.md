@@ -317,17 +317,17 @@ If you’ve never made a GitHub pages website before, you can follow this webpag
 
 ### 2. Images
 
-![exterior1](image/README/exterior1.png)
+![exterior1](image\README\exterior1.png)
 
-![exterior2](image/README/exterior2.png)
+![exterior2](image\README\exterior2.png)
 
-![exterior3](image/README/exterior3.png)
+![exterior3](image\README\exterior3.png)
 
-![exterior4](image/README/exterior4.png)
+![exterior4](image\README\exterior4.png)
 
-![interior1](image/README/interior1.png)
+![interior1](image\README\interior1.png)
 
-![interior1](image/README/interior2.png)
+![interior2](image\README\interior2.png)
 
 *Include photos of your device from a few angles. If you have a casework, show both the exterior and interior (where the good EE bits are!).*
 
@@ -345,9 +345,15 @@ The final result of our project is a fully working Indoor Air Quality Monitor th
 
 *Validate at least two requirements, showing how you tested and your proof of work (videos, images, logic analyzer/oscilloscope captures, etc.).*
 
-| ID     | Description                                                                                               | Validation Outcome                                                                          |
-| ------ | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| SRS-01 | The IMU 3-axis acceleration will be measured with 16-bit depth every 100 milliseconds +/-10 milliseconds. | Confirmed, logged output from the MCU is saved to "validation" folder in GitHub repository. |
+| ID     | Description                                                                                                                                                                                                              |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| SRS-01 | The system reads air data from the sensors every second.                     |
+| SRS-02 | The system checks air quality and triggers an alarm if CO₂ or TVOC stay high.      |
+| SRS-03 |The RGB LED and buzzer give visual and sound alerts for air quality. |
+| SRS-04 | The LCD screen updates every second to show current sensor readings.       |
+| SRS-05 | The system checks all sensors at startup and shows a warning if any fail.      |
+| SRS-06 | ESP32 uploads sensor data to the cloud for remote logging.        |
+| SRS-07 | The system verifies I²C and SPI data and retries failed communication.  |
 
 #### 3.2 Hardware Requirements Specification (HRS) Results
 
@@ -357,10 +363,15 @@ The final result of our project is a fully working Indoor Air Quality Monitor th
 
 *Validate at least two requirements, showing how you tested and your proof of work (videos, images, logic analyzer/oscilloscope captures, etc.).*
 
-| ID     | Description                                                                                                                        | Validation Outcome                                                                                                      |
-| ------ | ---------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| HRS-01 | A distance sensor shall be used for obstacle detection. The sensor shall detect obstacles at a maximum distance of at least 10 cm. | Confirmed, sensed obstacles up to 15cm. Video in "validation" folder, shows tape measure and logged output to terminal. |
-|        |                                                                                                                                    |                                                                                                                         |
+| ID     | Description                                                                                                                        |
+| ------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| HRS-01 | The ATmega328PB board controls all sensors, display, and output parts. |
+| HRS-02 | The SGP30 gas sensor measures CO₂ and TVOC through the I²C bus.   |
+| HRS-03 | The DHT11 sensor reads temperature and humidity .     |
+| HRS-04 | The LCD display (ST7735) runs at 5 V via SPI and shows system data.   |
+| HRS-05 | The buzzer makes a 4 kHz sound when air quality is poor.  |
+| HRS-06 | Three different color LEDs show air quality level.   |
+| HRS-07 | All modules share a 5 V USB power and common ground. |
 
 ### 4. Conclusion
 
