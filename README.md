@@ -325,6 +325,8 @@ If you’ve never made a GitHub pages website before, you can follow this webpag
 
 *What were your results? Namely, what was the final solution/design to your problem?*
 
+The final result of our project is a fully working Indoor Air Quality Monitor that measures CO₂, TVOC, temperature, and humidity in real time. The ATmega328PB reads sensor data every second, shows the values on the LCD screen, and gives fast feedback through an RGB LED and buzzer when air quality becomes poor. We also added UART communication for debugging and Wi-Fi support through an ESP32 to upload sensor data to the cloud. The system responds quickly to environmental changes, is stable during long-term operation, and provides clear visual and sound alerts to help users understand the air quality around them.
+
 #### 3.1 Software Requirements Specification (SRS) Results
 
 *Based on your quantified system performance, comment on how you achieved or fell short of your expected requirements.*
