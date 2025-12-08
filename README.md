@@ -319,15 +319,15 @@ If you’ve never made a GitHub pages website before, you can follow this webpag
 
 ![exterior1](image/README/exterior1.png)
 
-![exterior2](image\README\exterior2.png)
+![exterior2](image/README/exterior2.png)
 
-![exterior3](image\README\exterior3.png)
+![exterior3](image/README/exterior3.png)
 
-![exterior4](image\README\exterior4.png)
+![exterior4](image/README/exterior4.png)
 
-![interior1](image\README\interior1.png)
+![interior1](image/README/interior1.png)
 
-![interior2](image\README\interior2.png)
+![interior1](image/README/interior2.png)
 
 *Include photos of your device from a few angles. If you have a casework, show both the exterior and interior (where the good EE bits are!).*
 
