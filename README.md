@@ -308,7 +308,7 @@ If you’ve never made a GitHub pages website before, you can follow this webpag
 
 ### 1. Video
 
-[Insert final project video here]
+[Final Project Video](https://drive.google.com/file/d/1B1SKHOs2A9I9UX17AUFNReegv7i-G88d/view?usp=drive_link)
 
 * The video must demonstrate your key functionality.
 * The video must be 5 minutes or less.
@@ -317,7 +317,17 @@ If you’ve never made a GitHub pages website before, you can follow this webpag
 
 ### 2. Images
 
-[Insert final project images here]
+![exterior1](image\README\exterior1.jpg)
+
+![exterior2](image\README\exterior2.jpg)
+
+![exterior3](image\README\exterior3.jpg)
+
+![exterior4](image\README\exterior4.jpg)
+
+![interior1](image\README\interior1.jpg)
+
+![interior2](image\README\interior2.jpg)
 
 *Include photos of your device from a few angles. If you have a casework, show both the exterior and interior (where the good EE bits are!).*
 
