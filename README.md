@@ -365,6 +365,8 @@ Reflect on your project. Some questions to address:
 * Did you encounter obstacles that you didn’t anticipate?
 * What could be a next step for this project?
 
+This project taught us how to design and build a full embedded system that connects sensors, a display, alarms, and cloud communication. We are proud that the system can reliably read CO₂, TVOC, temperature, and humidity and show clear feedback through the LCD, LED, and buzzer. One challenge we faced was the ESP32, which often failed to connect or stay stable during Wi-Fi setup, making it difficult to upload code and slowing our progress. We also experienced issues with the LCD wiring, where slight movement caused the screen to show random lines or distorted colors, leading us to rebuild the connections for better stability. These problems taught us the importance of good hardware connections and careful planning when adding wireless modules.
+
 ## References
 
 Fill in your references here as you work on your final project. Describe any libraries used here.
