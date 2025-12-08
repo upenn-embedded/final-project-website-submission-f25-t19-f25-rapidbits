@@ -317,7 +317,7 @@ If you’ve never made a GitHub pages website before, you can follow this webpag
 
 ### 2. Images
 
-![exterior1](image\README\exterior1.png)
+![exterior1](image/README/exterior1.png)
 
 ![exterior2](image\README\exterior2.png)
 
