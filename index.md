@@ -18,11 +18,45 @@ The system also supports UART communication for debugging and data monitoring, a
 
 ![1765236560228](image/index/1765236560228.png)
 
-## Code
-[GitHub Repository](./Code)
+## 1. Final Product Video
 
-## Images
-![Example](./image/example.jpg)
+The following video demonstrates the full functionality of our Indoor Air Quality Monitor.  
+It is under 5 minutes and highlights all key features of the final system, including:
+
+- Real-time sensing of CO₂, TVOC, temperature, and humidity  
+- 1 Hz data acquisition using the SGP30 (I²C) and DHT11 (single-wire) sensors  
+- Live LCD updates with graphical bar indicators  
+- Automatic LED and buzzer alarms for poor air quality  
+- UART output for debugging and data verification  
+- System responsiveness to environmental changes  
+- Integration with the ESP32 module for cloud connectivity  
+
+🎥 **Watch the Final Project Video:**  
+[**Final Project Video Link**](https://drive.google.com/file/d/1Af4kr8z-wDgtJuuS6ySc6BVJDjWGENj6/view?usp=sharing)
+
+## 2. Images of the Final Product
+
+Below are several views of our completed Indoor Air Quality Monitor, including both the exterior enclosure and the internal electronics. These photos highlight the full integration of sensors, display module, indicators, and MCU hardware.
+### **400×400 image **
+![1765238678673](image/index/1765238678673.png)
+
+### **Exterior Views**
+The exterior images show the assembled device, including the LCD interface, RGB LED indicator, and overall form factor.
+
+![1765238870214](image/index/1765238870214.png)
+![1765238919365](image/index/1765238919365.png)
+
+---
+
+### **Interior Views**
+The internal photos reveal the embedded system architecture, showing the ATmega328PB controller board, SGP30 and DHT11 sensors, ST7735 LCD wiring through the level shifter, RGB LED, buzzer, and ESP32 Wi-Fi module.
+
+![interior1](image/README/interior1.png)
+![interior2](image/README/interior2.png)
+
+---
+
+
 
 ## Video
 Video is available in the `video` folder.
