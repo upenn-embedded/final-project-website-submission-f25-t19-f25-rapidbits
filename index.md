@@ -166,5 +166,102 @@ SRS-06 is fully validated. The ESP32 reliably receives environmental data from t
 Across sensing, display, alarm logic, and communication pathways, the system **satisfies the intended real-time behavior**, and real measurements confirm correct decision-making under varying environmental conditions.  
 Only cloud connectivity remains partially implemented due to hardware instability of the ESP32.
 
+## 4. Hardware Requirements Specification (HRS) Validation
 
-、
+Our Indoor Air Quality Monitor successfully meets all major hardware requirements outlined in the HRS.  
+This section summarizes measured hardware performance, notes minor limitations, and validates two representative requirements using experimental evidence.
+
+---
+
+### ✅ HRS-02 Validation  
+**Requirement:**  
+*The SGP30 gas sensor shall measure CO₂ and TVOC concentrations through the I²C interface.*
+
+**Performance:**  
+Achieved and validated.  
+The SGP30 initializes correctly, responds to all air-quality commands, and provides CO₂ (ppm) and TVOC (ppb) readings at 1 Hz. CRC verification is applied on each received data word to ensure data integrity.
+
+**Experimental Observations:**  
+- Successful ACK responses during TWI0 transactions  
+- Stable output values during a 20-minute continuous test  
+- CO₂ readings increase predictably when exposed to exhaled air  
+- TVOC responds immediately to sources such as hand sanitizer or alcohol wipes  
+
+**Proof of Work:**  
+- I²C communication trace verified during debugging  
+- LCD and UART output reflect identical values from the sensor  
+- Photos show bar-graph expansion when air quality changes  
+
+**Conclusion:**  
+The I²C hardware subsystem is reliable and meets all functional requirements for gas sensing.
+
+---
+
+### ✅ HRS-04 Validation  
+**Requirement:**  
+*The LCD display (ST7735) shall operate at 3.3 V via SPI and display system data.*
+
+**Performance:**  
+Partially limited by hardware wiring stability, but validated in terms of electrical and logical functionality.  
+The ST7735 operates correctly at 3.3 V through the SN74LVC125 level-shifter, rendering graphical UI elements such as thermometer bars, humidity indicators, and CO₂/TVOC charts.
+
+**Experimental Observations:**  
+- Normal operation under stable wiring conditions  
+- Full frame redraw at 1 Hz without tearing  
+- Color, text, and bar graphs match measured sensor values  
+- Occasional white screen or pixel corruption observed after repeated physical movement of the enclosure, traced to intermittent SPI jumper-wire connections rather than hardware logic faults  
+
+**Proof of Work:**  
+- Photos of working UI show correct graphic rendering  
+- UART logs remain valid even when LCD intermittently corrupts  
+- Reinforcing or reseating wiring temporarily resolves corruption  
+
+**Conclusion:**  
+The display subsystem meets electrical and functional requirements. Long-term reliability depends on improved wiring or enclosure-level strain relief.
+
+---
+
+### ✔ Summary  
+Overall, the hardware platform meets the intended design goals for sensing, actuation, display, and power delivery.  
+All functional paths—gas sensing, environmental measurement, alarm signaling, and data presentation—were successfully validated. The only notable limitation is mechanical wiring robustness, not electronic or logical hardware failure.
+
+## 5. Conclusion
+
+This project provided us with an end-to-end experience in building a complete embedded system that integrates sensing, processing, visualization, alarms, and cloud connectivity. Through the development of the Indoor Air Quality Monitor, we learned how to combine multiple hardware interfaces—including I²C, SPI, UART, PWM, and single-wire protocols—into a unified and reliable real-time system.
+
+### What went well
+We successfully implemented the full sensing pipeline for CO₂, TVOC, temperature, and humidity, and built a responsive graphical interface on the ST7735 LCD. The RGB LED and buzzer provided intuitive and immediate air-quality feedback, while the ESP32 module enabled data logging to the cloud. The system demonstrated stable real-time performance, and the 1 Hz update rate was consistently maintained through long-term operation.
+
+### What we learned
+We gained hands-on experience with:
+- Low-level sensor drivers and communication protocols  
+- Timing-critical drivers such as the DHT11 single-wire interface  
+- Display rendering and UI design under hardware constraints  
+- Multimodal feedback (LED, buzzer, screen) and threshold logic  
+- Cross-device communication between ATmega328PB and ESP32  
+- Debugging embedded systems with both electrical and software tools  
+
+These challenges taught us the importance of systematic testing, modular code design, and reliable hardware connections.
+
+### Challenges and how we adapted
+The most unexpected difficulty came from hardware reliability.  
+After placing the system into the enclosure, the LCD occasionally displayed a white screen or corrupted pixels due to unstable jumper-wire connections. This problem did not occur before mounting, indicating mechanical strain rather than software failure. Strengthening the wiring improved stability, and we learned the importance of designing for robustness, not just functionality.
+
+The ESP32 also presented programming instability during early development, sometimes failing to enter download mode. Through repeated hardware testing, retries, and configuration adjustments, we ultimately achieved reliable UART communication and cloud logging.
+
+### What could be improved
+If given more time, we would:
+- Replace the LCD jumper wiring with soldered or PCB-mounted connectors  
+- Design a custom PCB to eliminate mechanical instability  
+- Improve the enclosure design for strain relief and airflow  
+- Expand cloud features to include dashboards, alerts, and historical visualizations  
+
+### Next steps
+This project forms a strong foundation for a practical, low-cost indoor air-quality monitor. Future developments could include:
+- Machine-learning–based prediction of air-quality trends  
+- Integration into smart-home ecosystems  
+- Battery-powered operation with power-management optimization  
+- Multi-room sensing network using additional wireless modules  
+
+### Final reflection
+Overall, this project strengthened our embedded-systems engineering skills and showed us how sensing and control technologies can be meaningfully applied to real-world problems. We are proud that our final device not only works reliably but also provides immediate, actionable insight into the indoor environment—demonstrating both technical achievement and practical value.
