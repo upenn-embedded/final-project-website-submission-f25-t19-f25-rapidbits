@@ -2,6 +2,8 @@
 
 Welcome to our final project website for **F25-T19 RapidBits**.
 
+[**Website Link**](https://upenn-embedded.github.io/final-project-website-submission-f25-t19-f25-rapidbits/)
+
 ## Project Overview
 
 This project presents a fully integrated Indoor Air Quality Monitor capable of tracking four key environmental indicators: CO₂, TVOC, temperature, and humidity. The system is built around the ATmega328PB microcontroller, which collects gas measurements from the SGP30 via I²C and temperature–humidity data from the DHT11 through a single-wire digital interface.
